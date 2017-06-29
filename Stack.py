@@ -117,7 +117,7 @@ finaltestset = test[usable_columns].values
 xgb_params = {
     'n_trees': 520, 
     'eta': 0.0045,
-    'max_depth': 4,
+    'max_depth': 5,
     'subsample': 0.93,
     'objective': 'reg:linear',
     'eval_metric': 'rmse',
@@ -157,7 +157,7 @@ print(r2_score(y_train,stacked_pipeline.predict(finaltrainset)*0.2855 + model.pr
 sub = pd.DataFrame()
 sub['ID'] = id_test
 sub['y'] = y_pred*0.75 + results*0.25
-sub.to_csv('stacked-models.csv', index=False)
+sub.to_csv('stacked-models2.csv', index=False)
 
 
 # Any results you write to the current directory are saved as output.
